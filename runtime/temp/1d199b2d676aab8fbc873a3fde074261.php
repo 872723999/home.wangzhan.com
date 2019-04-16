@@ -1,0 +1,106 @@
+<?php /*a:1:{s:81:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\my\index.html";i:1555169720;}*/ ?>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="gb2312" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="Keywords" content="内蒙古《都林教育》培训班是2016年成立的专业蒙古语培训机构。">
+<meta name="Description" content="《都林教育》的主营业务涵盖了公务员、事业单位（各盟市）、政法干警考试、司法考试等各类职业人才的招录考试、笔试及面试培训，是一家综合性的职业教育培训机构。">
+<title>内蒙古《都林教育》</title>
+<link rel="stylesheet" type="text/css" href="/static/home/css/ger.css" />
+<link rel="stylesheet" type="text/css" href="/static/home/css/index.css" />
+<script type="text/javascript" src="/static/home/js/jq.min.js"></script>
+<style type="text/css">
+    .active{
+        background: yellow;
+    }
+</style>
+</head>
+<body>
+<div class="kcbxqy_ner" style="width: 1200px; margin: auto; margin-top:  20px"> <a href="/" class="kcbxqy_bt">首页</a> <span class="kcbxqy_bt1"> ></span><a href="/" class="kcbxqy_bt2">个人中心</a> </div>
+<div class="zh-mycourse-page">
+		
+<div class="mycourses-con">
+  <div class="mycourses-con-left">
+    <p class="mycourses-title">个人中心</p>
+    <ul class="myinfor-tab">
+      <li id="myCourseSidebar"><a href="<?php echo url('my/index'); ?>" class="active">我的课程</a></li>
+      <li id="myOrderSidebar"><a href="<?php echo url('my/order_list'); ?>?order_type=1">我的订单</a></li>
+      <!-- <li id="myHistorySidebar"><a href="#">观看历史</a></li> -->
+
+    </ul>
+  </div>
+  <div class="mycourses-con-right">
+    <p class="mycourses-title">我的课程</p>
+    <div class="mycourses_tab">
+      <ul>
+        <li><a class="course_type active" href="<?php echo url('my/index'); ?>">全部课程 <span>(<?php echo htmlentities($num); ?>)</span></a></li>
+        <li><a class="course_type" href="?course_type=1" id="type_1">法考专项课程 <span>(<?php echo htmlentities($num1); ?>)</span></a></li>
+        <li><a class="course_type" href="?course_type=2" id="type_2">法考真题解析课程 <span>(<?php echo htmlentities($num2); ?>)</span></a></li>
+        <li><a class="course_type" href="?course_type=3" id="type_3">法考免费试听课<span>(<?php echo htmlentities($num3); ?>)</span></a></li>
+      </ul>
+    </div>
+
+    <div class="mycourses-wrap">
+      <div class="mycourses-list">
+        <div class="list">
+          <ul>
+            <?php if(is_array($course_list) || $course_list instanceof \think\Collection || $course_list instanceof \think\Paginator): $i = 0; $__LIST__ = $course_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+                <li>
+                    <div class="top-time"> <span>47课时</span> </div>
+                    <div class="course">
+                        <div class="left-img"> <img src="<?php echo htmlentities($admin_path); ?><?php echo htmlentities($val['pic']); ?>" style="width: 100%;"> </div>
+                        <div class="right-con">
+                            <p class="title"></p>
+                            <p class="mingshi tea-name2">讲师：<span></span></p>
+                            <div class="bott-wrap">
+                                <div class="study">已学习 <span>0</span> / <span>47</span></div>
+                                <div class="progress">
+                                    <p class="progress-inner" style="width:0%;"></p>
+                                </div>
+                            </div>
+                          <a href="<?php echo url('course/info'); ?>?id=<?php echo htmlentities($val['id']); ?>" class="coursedetail_btn" style="top:68px">去听课</a>
+                        </div>
+                    </div>
+                </li> 
+            <?php endforeach; endif; else: echo "" ;endif; ?>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<div class="mengceng hide" style="width:100%;height:100%;background:rgba(0,0,0,0.6);position:fixed;left:0;top:0;"></div>
+
+</div>
+
+<div class="foot">
+  <div class="foot_ner">
+    <div class="foot_ner_fl">
+      <h3>内蒙古都林教育</h3>
+      <p>咨询热线：15004710660 / 15248038134</br>
+        Copyright@ 内蒙古都林教育咨询有限公司　版权所有</br>
+        蒙ICP备18001175号-1</p>
+    </div>
+    <div class="foot_ner_fr"><img src="/static/home/img/ewm.jpg" height="165px" width="165px" alt="内蒙古都林教育"/>
+      <div>
+        <P>扫一扫关注公众号</br>
+          更多精彩 尽在其中</P>
+        <h3>15248038134</h3>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+<script>
+    $(function(){
+        var course_type = "<?=$_GET['course_type']?>";
+        if(course_type){
+            $(".course_type").removeClass('active');
+            $("#type_"+course_type).addClass('active');
+        }
+    });
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Keywords" content="内蒙古《都林教育》培训班是2016年成立的专业蒙古语培训机构。">
+    <meta name="Description" content="《都林教育》的主营业务涵盖了公务员、事业单位（各盟市）、政法干警考试、司法考试等各类职业人才的招录考试、笔试及面试培训，是一家综合性的职业教育培训机构。">
+    <title>内蒙古《都林教育》</title>
+    <link rel="stylesheet" type="text/css" href="/static/home/css/zhifu.css" />
+    <link rel="stylesheet" type="text/css" href="/static/home/css/index/index.css" />
+</head>
+<body>
+    <div class="zhifu_1"><h1>购买课程</h1>
+        <div class="zhifu_1_fl"><img src="{$admin_path}{$course_info.pic}" alt="内蒙古都林教育"/ style="width:300px;height:168.75px;"></div>
+        <div class="zhifu_1_fr"><h3>{$course_info.title}</h3>
+            <p>{$course_info.describe}</p>
+            <p>价格:<span>￥ {$course_info.price}</span></p><p>原价:<s>￥{$course_info.old_price}</s></p>
+        </div>
+    </div>  
+    <div class="zhifu_2">
+        <div class="buy_pay_way clearfix">
+            <p class="address_tips">请选择支付方式</p>
+            <div class="zhifubao_and_weixin">
+                <ul class="clearfix">
+                    <li style="cursor: pointer;" class="alipay">
+                        <img src="/static/home/img/alipay.png" alt="">  
+                    </li>
+                    <li style="cursor: pointer;" class="weixin_pay">
+                        <img src="/static/home/img/weixin_pay.png" alt="">
+                    </li>
+                </ul>
+            </div>
+            <div class="pay_money">
+                <p class="pay_money_tit">支付金额: <span class="pay_money_num">￥{$course_info.price}</span> </p>
+                <a class="go_btn">去支付</a>
+            </div>
+        </div>
+    </div>
+    {include file="common/common_bottom"/}
+</body>
+</html>

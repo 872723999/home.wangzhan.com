@@ -1,0 +1,85 @@
+{include file="common/common_head"/}
+<script src="/static/home/js/jquery-1.4.2.min.js"></script>
+<script src="/static/home/js/index.js"></script>
+<!-- 分页样式 -->
+<link rel="stylesheet" href="/static/common/css/page.css" />
+<script type="text/javascript"> 
+$(function(){
+	$(".tea_tu").swBanner();
+});
+</script>
+
+
+
+
+<body>
+<!-- 导航 -->
+{include file="common/common_navhead"/}
+
+<div class="msxqybaner"></div>
+<div class="msxqyym">
+<div class="msxqy_b">
+  <div class="msxqy_nerbt"> <a href="/" class="msxqy_bt">首页</a> <span class="msxqy_bt1"> ></span><a href="{:url('teacher/list')}" class="msxqy_bt1">名师</a> <span class="msxqy_bt1"> ></span> <a href="#" class="msxqy_bt2">{$info.name}</a> </div>
+  <div class="essay-tuijian-news"> </div>
+  <div class="msxq_tou">
+    <div class="msxq_toufl"><a href="#"><img src="{$admin_path}{$info.head_img}" alt="内蒙古都林教育名师"/></a></div>
+    <div class="msxq_toufr">
+      <h1><a href="#">{$info.name}</a></h1>
+      <p><a href="#">都林教育讲师</a></p>
+      <div><a href="#">{$info.introduction}</a></div>
+    </div>
+  </div>
+  <div class="msxq_ner">
+    <div class="msxq_nerfl">
+      <div class="msxq_nerfl_tit">开设课程</div>
+      <div class="msxqnr_ner">
+        <ul>
+            {notempty name="course_list"}
+                {volist name="course_list" id="val"}
+                    <li><img src="{$admin_path}{$val.pic}" alt="内蒙古都林教育"/>
+                        <div style="background: #f7f7f7; height: 93px;">
+                            <h3><a href="{:url('course/info')}?id={$val.id}">{$val.title}</a></h3>
+                            <p>{$val.describe}</p>
+                            <div class="msxqnr_ner_fr">{$val.cang}</div>
+                            <div class="msxqnr_ner_righ">￥{$val.price}元</div>
+                        </div>
+                    </li>
+                {/volist}
+            {/notempty}
+        </ul>
+      </div>
+    </div>
+    <div class="msxq_nerfr">
+	  <div class="right_techer"> <font>名师风采</font>
+<div class="tea_tu">
+<ul class="banList">
+
+{volist name="tui_list" id="val"}
+    {eq name="key" value="0"}
+        <li class="active"><a href="{:url('teacher/info')}?id={$val.id}" target="_blank"><img src="{$admin_path}{$val.head_img}" width="228" height="260"/></a></li>
+    {else/}
+        <li><a href="{:url('teacher/info')}?id={$val.id}" target="_blank"><img src="{$admin_path}{$val.head_img}" width="228" height="260"/></a></li>
+    {/eq}
+{/volist}
+
+
+</ul>
+<div class="fomW">
+<div class="jsNav">
+<a href="javascript:;" class="trigger current"></a>
+<a href="javascript:;" class="trigger"></a>
+<a href="javascript:;" class="trigger"></a>
+</div>
+</div>
+		  </div></div>
+	  
+	  
+	  
+	  </div>
+  </div>
+  <div class="course-filter-page" style="padding-top: 20px">{$course_list|raw}</div>
+</div>
+  {include file="common/common_bottom"/}
+
+</body>
+</html>

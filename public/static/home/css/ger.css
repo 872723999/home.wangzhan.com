@@ -1,0 +1,365 @@
+@charset "utf-8";
+/* CSS Document */
+ol, ul, li {
+    list-style: none;
+    list-style-type: none;
+}
+img {width: 100%;}
+body {background: #f7f7f7;}
+.zh-mycourse-page .mycourses-con{
+overflow:hidden;
+    margin-bottom:40px;
+	width: 1200px;  margin:auto; margin-top: 20px; 
+}
+.mycourses-con .mycourses-con-left{
+width:250px;
+    height:1000px;
+    background:#fff;
+    float: left;
+   padding-left:47px;
+    padding-top:40px;
+}
+.mycourses-con .mycourses-con-right{
+width:820px;
+    float: right;
+    background:#fff;
+    padding:30px;
+}
+.myinfor-tab li a{
+    font-size:16px;
+    color:#666;
+}
+
+.mycourses-con .mycourses-con-left .mycourses-title{
+    font-size:18px;
+    color:#000;
+    margin-bottom:30px;
+}
+.myinfor-tab li{
+margin-bottom:20px;
+}
+.myinfor-tab li.active a{
+color:#f60;
+}
+.mycourses-con .mycourses-con-right .mycourses-title {
+    font-size:30px;
+    color:#000;
+    margin-bottom:30px;
+}
+.mycourses-con-right .mycourses_tab{
+    margin-bottom:20px;
+}
+.mycourses-con-right .mycourses_tab ul{
+    overflow:hidden;
+}
+.mycourses-con-right .mycourses_tab ul li{
+    float: left;
+    font-size:16px;
+    line-height:16px;
+    color:#999;
+    padding-right:20px;
+    border-right:1px solid #dcdcdc;
+    margin-right:20px;
+}
+.mycourses-con-right .mycourses_tab ul li a.active{
+    color:#f60;
+}
+.mycourses-list{
+    margin-bottom:45px;
+}
+.mycourses-list  .list ul li{
+    width:100%;
+    height:191px;
+    background:#fff;
+    border:1px solid #e6e6e6;
+    border-radius:5px;
+    padding-bottom:20px;
+    position:relative;
+   margin-top:20px;
+}
+.mycourses-list  .list ul li .top-time {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background: #f7f7f7;
+    padding-left: 20px;
+    font-size:16px;
+    color:#000;
+    position:relative;
+}
+.mycourses-list  .list ul li .course{
+padding-left:20px;
+    padding-right:30px;
+    padding-bottom:20px;
+    padding-top:20px;
+}
+.mycourses-list  .list ul li .course .left-img{
+width:195px;
+    height:110px;
+    float: left;
+    margin-right:20px;
+    background:pink;
+    border-radius:5px;
+    overflow:hidden;
+}
+.mycourses-list  .list ul li .course .right-con{
+    float: left;
+    width:400px;
+
+}
+.mycourses-list  .list ul li .course .right-con .title{
+    font-size:22px;
+    color:#000;
+    width:100%;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    line-height:22px;
+    margin-bottom:8px;
+    margin-top:10px;
+}
+.mycourses-list  .list ul li .course .right-con .mingshi{
+font-size:18px;
+    color:#306c89;
+    margin-bottom:15px;
+}
+.mycourses-list  .list ul li .course .right-con .study{
+    font-size:18px;
+    color:#999;
+    float: left;
+    margin-right:20px;
+
+}
+.coursedetail_btn,.goon-look{
+    width:112px;
+    height:36px;
+    border:1px solid #d1a366;
+    color:#d1a366;
+    text-align: center;
+    line-height:36px;
+    position:absolute;
+    right:30px;
+    top:97px;
+    border-radius:5px;
+    font-size:14px;
+}
+.coursedetail_btn:hover,.goon-look:hover{
+background:#dead6d;
+    color:#fff;
+    border:1px solid #dead6d;
+}
+.coursedetail_btn:active,.goon-look:hover{
+color:#fff;
+    background:#cd9852;
+    border:1px solid #cd9852;
+}
+.mycourses-list  .list ul li .course .right-con .progress{
+    width:200px;
+    height:10px;
+    background:#eee;
+    border-radius:5px;
+    position:relative;
+    float: left;
+    margin-top:10px;
+  }
+.mycourses-list  .list ul li .course .right-con .progress .progress-inner {
+    background:#d1a366;
+    position:absolute;
+    left:0;
+    top:0;
+    height:10px;
+    width:30%;
+    border-radius:5px;
+    
+}
+.mycourses-list  .list ul li .course .right-con .bott-wrap{
+    overflow:hidden;
+}
+ /*我的订单页面*/
+.mycourses-list  .list ul li .top-time .xiadantime{
+margin-right:10px;
+}
+.mycourses-list  .list ul li .course .right-con .order-price{
+margin-top:12px;
+    font-size:24px;
+    color:#d20101;
+}
+.mycourses-list  .list ul li .top-time  .order-status{
+font-size:16px;
+    color:#010101;
+    position:absolute;
+    right:30px;
+    top:0px;
+   }
+.mycourses-list  .list ul li .course .right-con .order-title{
+    margin-top:29px;
+}
+/*观看历史*/
+.goon-look{
+top:40px;
+}
+.myhistory-wrap .look-con ul li{
+    position:relative;
+}
+.myhistory-wrap .myhistory-list{
+    overflow:hidden;
+    margin-top:4px;
+}
+.myhistory-list .look-time{
+    font-size:16px;
+    color:#666;
+    float: left;
+    margin-right:10px;
+}
+.myhistory-list  .look-line{
+    float: left;
+    margin-right:20px;
+    padding-top:14px;
+    position:relative;
+
+}
+.myhistory-list  .look-line .line{
+    width:2px;
+    background:#eee;
+
+
+
+}
+.myhistory-list  .look-line .line .circle{
+    width:10px;
+    height:10px;
+    background:#d1a366;
+    border-radius:50%;
+    display:inline-block;
+    position:absolute;
+    top:0;
+    margin-left:-5px;
+    left:50%;
+}
+.myhistory-wrap .look-con{
+    float: left;
+    width:86%;
+}
+.myhistory-wrap .look-con ul{
+    padding-bottom:30px;
+}
+.myhistory-wrap .look-con ul li{
+    overflow:hidden;
+    margin-bottom:40px;
+}
+.myhistory-wrap .look-con ul li .left-img{
+width:195px;
+    height:110px;
+    border-radius:5px;
+    float: left;
+    background:pink;
+    margin-right:20px;
+}
+.myhistory-wrap .look-con ul li .right-des{
+    float: left;
+    width:296px;
+}
+.myhistory-wrap .look-con ul li .right-des .tit{
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height:26px;
+    font-size:20px;
+    color:#000;
+    height:55px;
+    margin-bottom:5px;
+}
+.myhistory-wrap .look-con ul li .right-des .coursename{
+font-size:18px;
+    color:#666;
+    margin-bottom:5px;
+}
+.myhistory-wrap .look-con ul li .right-des .tea-name{
+    font-size:16px;
+    color:#999;
+}
+.order-detail-btn{
+    top:75px!important;
+}
+.refund-apply-btn{
+    top:120px!important;
+}
+.hide{
+    display: none;
+}
+.order-detail{
+    height: 110px;
+}
+.order-detail p{
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: #666;
+}
+.order-detail p span{
+    color: #000000;
+}
+.p-image{
+    width: 195px;
+    height: 110px;
+    float: left;
+    margin-right: 50px;
+    background: pink;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.p-image img{
+    width: 100%;
+}
+
+.apply-reason{
+    margin-top: 20px;
+    height: 200px;
+    width: 100%;
+    background: #f7f7f7;
+    border: 1px solid #f7f7f7;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 10px;
+}
+.words-num{
+    float: right;
+}
+.submit-box{
+    margin-top: 35px;
+}
+.submit-box a{
+    width: 112px;
+    height: 36px;
+    border: 1px solid #d1a366;
+    color: #d1a366;
+    text-align: center;
+    line-height: 36px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: block;
+    float: right;
+}
+.cancel-btn{
+    margin-left: 15px;
+}
+.refund-desc{
+    margin-top: 50px;
+}
+
+#diagnosis {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    border: 0;
+}
+.mycourses-con-right {
+    width: 895px;
+    float: right;
+    background: #fff;
+    padding: 30px;
+}

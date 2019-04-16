@@ -1,0 +1,88 @@
+{include file="common/common_head"/}
+<!-- 分页样式 -->
+<link rel="stylesheet" href="/static/common/css/page.css" />
+<script src="/static/home/js/main01.js"></script>
+</head>
+<style type="text/css">
+    .active{
+        border-bottom: 5px solid red;
+    }
+</style>
+<body>
+<!-- 导航 -->
+{include file="common/common_navhead"/}
+
+<div class="kcbbaner"></div>
+<div class="msxqyym">
+  <div class="msxqy_b">
+    <div class="msxqy_nerbt"> <a href="index.html" class="msxqy_bt">首页</a> <span class="msxqy_bt1"> ></span><a href="kcb.html" class="msxqy_bt1">课程包</a> </div>
+    <div class="essay-tuijian-news"> </div>
+    <div class="kcb_dh">
+      <div class="kcb_dhfl">
+        <div class="kcb_dhflsh">
+          <p>学 科：</p>
+          <p><a href="{:url('course/bao_list')}?classType_id=0" class="active classType_list" id="classType_0">全部</a></p>
+          <ul>
+            {volist name="$classType_list" id="val"}
+                <li><a href="{:url('course/bao_list')}?classType_id={$val.id}" class="classType_list" id="classType_{$key}">{$val['title']}</a></li>
+            {/volist}
+          </ul>
+        </div>
+      </div>
+      <div class="kcb_dhfr">
+        <div class="searchdiv flright">
+          <input type="text" class="search1" id="keywords" placeholder="请输入搜索内容"/>
+          <input type="button" class="sousuo butto search_btn" value="GO"/>
+        </div>
+      </div>
+    </div>
+	   <div class="kcsz_ner1">
+    <ul>
+        {notempty name="bao_list"}
+            {volist name="bao_list" id="val"}
+                <a href="{:url('course/bao_info')}?id={$val.id}" target="_blank">
+                    <li>
+                        <img src="{$admin_path}{$val.pic}" alt="内蒙古都林教育"/>
+                        <h3>{$val.title}</h3>
+                        <p>{$val.describe}</p>
+                        <div>
+                            <div class="kcsz_ner_fr">{$val.cang}</div>
+                            <div class="kcsz_ner_righ">￥{$val.price}元</div>
+                        </div>
+                    </li>
+                </a>
+            {/volist}
+            {else /}
+            <div style="text-align: center;">
+                <font color="red">数据为空</font>
+            </div>
+        {/notempty}
+    </ul>
+  </div>
+	   <div class="course-filter-page">
+            {$bao_list|raw}   
+        </div>
+  </div>
+	
+</div>
+{include file="common/common_bottom"/}
+</body>
+</html>
+<script>
+    $(function(){
+        var classType_id = "<?=$_GET['classType_id']?>";
+        $('.classType_list').removeClass('active');
+        $('#classType_'+classType_id).addClass('active');
+    });
+
+    // 搜索
+    $('.search_btn').click(function(){
+        var keywords = $('#keywords').val();
+        if(!keywords){
+            alert('搜索项不能为空');
+            return false;
+        }else{
+            location.href="{:url('course/bao_list')}?classType_id=0&keywords="+keywords;
+        }
+    });
+</script>

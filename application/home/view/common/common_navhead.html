@@ -1,0 +1,27 @@
+<div class="ms_top">
+	<div class="ms_top_fl">
+		<h3>内蒙古都林教育</h3>
+		<div class="ms_top_flner">
+    		<ul>
+    			<li><a href="/" target="_blank">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+    			<li><a href="{:url('course/course_list')}?classType_id=0&classSmallType_id=0&teaching_type=0" target="_blank">发现课程</a></li>
+    			<li><a href="{:url('course/bao_list')}?classType_id=0"  target="_blank">课程包</a></li>
+    			<li><a href="{:url('teacher/list')}"  target="_blank">名师专区 </a></li>
+    		</ul>
+		</div>
+	</div>
+	<div class="ms_top_fr">
+			<!-- <div class="searchdiv flright">
+    			<input type="text" class="search" value="请输入搜索内容"/>
+    			<input type="button" class="sousuo button" value="GO"/>
+    		</div> -->
+    	{empty name="uid"}
+			<div class="dlss">
+		  		<ul>
+		  			<li><a href="denglu.html" target="_blank">登录</a></li>
+					<li><a href="denglu.html" target="_blank">注册</a></li>
+				</ul>
+			</div>
+    	{/empty}
+	</div>
+</div>

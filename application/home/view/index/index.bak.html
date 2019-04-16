@@ -1,0 +1,244 @@
+﻿{include file="common/common_head"/}
+
+
+<script type="text/javascript">
+$(function(){
+    function tabs(tabTit,on,tabCon){
+        $(tabTit).children().hover(function(){
+            $(this).addClass(on).siblings().removeClass(on);
+            var index = $(tabTit).children().index(this);
+            $(tabCon).children().eq(index).show().siblings().hide();
+      });
+  };
+    tabs(".tab-hd","active",".tab-bd");
+});
+</script>
+</head>
+
+<body>
+<div class="logo_bg">
+  <div class="logo">
+    <div class="logo_fl"><img src="/static/home/img/index/logo.jpg"  alt="都林教育"/></div>
+    <div class="logo_fr">
+      <div class="logo_frsh"><img src="/static/home/img/index/tel.jpg"  alt="都林教育"/></div>
+      <div class="logo_frxi">
+        <table align="center" cellspacing="0" border="0" >
+          <tr>
+            <td style="position: relative;"><input id="text" type="text" placeholder="搜索">
+              <input type="button" value="Go">
+              <div id="word"></div></td>
+          </tr>
+        </table>
+      </div>
+      <div class="logo_dh">
+        <ul>
+          <Li><a target="_blank" href="/">都林教育&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  /</a> </Li>
+          <Li><a target="_blank" href="{:url('course/course_list')}?classType_id=0&classSmallType_id=0&teaching_type=0">发现课程&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  /</a> </Li>
+          <Li><a target="_blank" href="{:url('course/bao_list')}?classType_id=0"> 课程包 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; /</a> </Li>
+          <Li><a target="_blank" href="{:url('teacher/list')}">名师专区</a> </Li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="dhtsz">
+    <div class="head-mj clearfix">
+        <div class="head-mj-inner">
+            <div class="head-mj-i-r">全部课程</div>
+            <div class="head-mj-i-l">
+                <ul class="clearfix">
+                    <li >时尚西点专业
+                        <a href="javascript:;"></a>
+                        <div style="left: -355px; height: 0px;" class="">
+                            <p class="mj-btn">
+                                aaaaaaaa
+                            </p>
+                        </div>
+                    </li>
+                    <li >金领大厨专业
+                        <a href="javascript:;"></a>
+                        <div style="left: -495px; height: 0px;" class="">
+                            <p class="mj-btn">
+                                bbbbbbbbbbbbbbbbbb
+                            </p>
+                        </div>
+                    </li>
+                    <li>金领大厨专业
+                        <a href="javascript:;"></a>
+                        <div style="left: -495px; height: 0px;" class="">
+                            <p class="mj-btn">
+                                cccccccccccccccc
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="btn_div">
+                <a target="_blank" class="headbtn" href="/home/user/login">登录&nbsp; 注册</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="example">
+  <div class="ft-carousel" id="carousel_1">
+    <ul class="carousel-inner">
+      <li class="carousel-item"><img src="/static/home/img/index/a1.jpg" alt="都林教育" /></li>
+      <li class="carousel-item"><img src="/static/home/img/index/a2.jpg" alt="都林教育" /></li>
+      <li class="carousel-item"><img src="/static/home/img/index/a3.jpg" alt="都林教育" /></li>
+    </ul>
+  </div>
+</div>
+<script src="/static/home/js/jquery.min.js"></script> 
+<script src="/static/home/js/ft-carousel.min.js"></script> 
+<script type="text/javascript">
+  $("#carousel_1").FtCarousel();
+
+</script>
+<div class="kcsz">
+    <h2>推荐课程</h2>
+        <div class="kcsz_bt">公务员、事业单位（各盟市) 、政法干警考试、司法考试等各类职业人才的招录考试、笔试及面试培训</div>
+            <div class="tab">
+                <ul class="tab-hd">
+                    <div class="tab-hd_hd" class="tab-hd11">
+                    全部课程
+                    </div>
+                    {volist name="list" id="val"}
+                        <div class="tab-hd_hd" data-id="{$val.id}" >{$val.title}</div>
+                    {/volist}
+                </ul>
+                <ul class="tab-bd">
+                    <!-- 全部课程 begin -->
+                    <li class="thisclass">
+                        <div class="kcsz_ner">
+                            <ul>
+                                {volist name="course_list" id="val"}
+                                    <a href="{:url('course/info')}?id={$val.id}" target="_blank">
+                                        <li>
+                                            <img src="{$val.pic}" alt="内蒙古都林教育"/>
+                                            <h3>{$val.title}</h3>
+                                            <p>{$val.describe}</p>
+                                            <div>
+                                                <div class="kcsz_ner_fr">{$val.cang}</div>
+                                                <div class="kcsz_ner_righ">￥{$val.price}元</div>
+                                            </div>
+                                        </li>
+                                    </a>
+                                {/volist}
+                            </ul>
+                        </div>
+                    </li>
+                    <!-- 全部课程 end -->
+                    <!-- 法考专项课程 begin -->
+                    <li>
+                        <div class="kcsz_ner">
+                            <ul>
+                                {volist name="course_list" id="val"}
+                                    {eq name="val.class_type_id" value="1"}
+                                    <a href="{:url('course/info')}?id={$val.id}" target="_blank">
+                                        <li>
+                                            <img src="{$val.pic}" alt="内蒙古都林教育"/>
+                                            <h3>{$val.title}</h3>
+                                            <p>{$val.describe}</p>
+                                            <div>
+                                                <div class="kcsz_ner_fr">{$val.cang}</div>
+                                                <div class="kcsz_ner_righ">￥{$val.price}元</div>
+                                            </div>
+                                        </li>
+                                    </a>
+                                    {/eq}
+                                {/volist}
+                            </ul>
+                        </div>
+                    </li>
+                    <!-- 法考专项课程 end -->
+                    <!-- 法考真题解析课程 begin -->
+                    <li>
+                        <div class="kcsz_ner">
+                            <ul>
+                                {volist name="course_list" id="val"}
+                                    {eq name="val.class_type_id" value="2"}
+                                    <a href="{:url('course/info')}?id={$val.id}" target="_blank">
+                                        <li>
+                                            <img src="{$val.pic}" alt="内蒙古都林教育"/>
+                                            <h3>{$val.title}</h3>
+                                            <p>{$val.describe}</p>
+                                            <div>
+                                                <div class="kcsz_ner_fr">{$val.cang}</div>
+                                                <div class="kcsz_ner_righ">￥{$val.price}元</div>
+                                            </div>
+                                        </li>
+                                    </a>
+                                    {/eq}
+                                {/volist}
+                            </ul>
+                        </div>
+                    </li>
+                    <!-- 法考真题解析课程 end -->
+                    <!-- 法考免费试听课 begin -->
+                    <li>
+                        <div class="kcsz_ner">
+                            <ul>
+                                {volist name="course_list" id="val"}
+                                    {eq name="val.class_type_id" value="3"}
+                                        <a href="{:url('course/info')}?id={$val.id}" target="_blank">
+                                            <li>
+                                                <img src="{$val.pic}" alt="内蒙古都林教育"/>
+                                                <h3>{$val.title}</h3>
+                                                <p>{$val.describe}</p>
+                                                <div>
+                                                    <div class="kcsz_ner_fr">{$val.cang}</div>
+                                                    <div class="kcsz_ner_righ">￥{$val.price}元</div>
+                                                </div>
+                                            </li>
+                                        </a>
+                                    {/eq}
+                                {/volist}
+                            </ul>
+                        </div>
+                    </li>
+                    <!-- 法考免费试听课 end -->
+                </ul>
+            </div>
+        <div class="kcsz_zx"><a href="{:url('course/course_list')}?classType_id=0&classSmallType_id=0&teaching_type=0" target="_blank">更多课程</a></div>
+</div>
+<div class="kcb_bg">
+    <h3>课程包</h3>
+    {notempty name="package_list"}
+        {volist name="package_list" id="val"}
+            <p><a href="{:url('course/bao_info')}?id={$val.id}" target="_blank">{$val.title}</a></p>
+            <div  class="kcb_bgner">
+                <div class="kcb_bgner_fl"><img src="{$admin_path}{$val.pic}" style="height: 200px;width: 200px;" alt="都林教育"/></div>
+                <div class="kcb_bgner_fr">
+                    <p>{$classType_list[$val.class_type_id]['title']}有效天数：{$val.day}天        打包价格：<span>￥{$val.price}</span> ￥2?2?6?5?.?0?0?</p>
+                    <h3>{$val.describe}</h3>
+                    <div class="kcb_bgan_fl"> <a href="#">我要购买</a></div>
+                    <div class="kcb_bgan_fr"> <a href="#">课程详情</a></div>
+                </div>
+            </div>  
+        {/volist}
+    {/notempty}
+    
+</div>
+<div class="news">
+    <h2>新闻资讯</h2>
+    <div class="news_ner">
+        <div class="news_nerfl"><img src="/static/home/img/index/new.jpg" height="404px" width="467px" alt="都林教育"/></div>
+        <div class="news_nerfr">
+            <ul>
+                {notempty name="article_list"}
+                    {volist name="article_list" id="val"}
+                        <li>
+                            <h3><a href="{:url('article/info')}?id={$val.id}" target="_blank">{$val.title}</a></h3>
+                            <p><a href="{:url('article/info')}?id={$val.id}" target="_blank">{$val.introduction}</a></p>
+                        </li>
+                    {/volist}
+                {/notempty}
+            </ul>
+        </div>
+    </div>
+</div>
+{include file="common/common_bottom"/}
+<script type="text/javascript" src="http://www.nmgxdf.com/templets/spweb/js/jquery.min.js"></script><script type="text/javascript" src="http://www.nmgxdf.com/templets/spweb/js/footer.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+{include file="common/common_head"/}
+
+<link rel="stylesheet" type="text/css" href="/static/home/css/course/play.css" />
+</head>
+
+<body>
+<div class="shipin_fl">
+  <div class="shipin_fl_q"><img src="/static/home/img/course/logo1.png" alt="内蒙古都林教育"/>
+    <p><a href="/" target="_blank">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></p>
+    <p><a href="{:url('course/course_list')}?classType_id=0&classSmallType_id=0&teaching_type=0" target="_blank">全部课程</a></p>
+    <p><a href="{:url('course/course_list')}?classType_id=0" target="_blank">课程包</a></p>
+  </div>
+</div>
+<div class="shipin_fr">
+  <div class="shipin_fr_fl">
+  	{notempty name="$part_info"}
+    	<h3>{$part_info['title']}</h3>
+    {else /}
+    	<h3>{$course_list[0]['b_title']}</h3>
+    {/notempty}
+    <!-- <div class="shipin_fr_shipin"> -->
+    <div class="">
+    	{notempty name="$part_info"}
+    	<video src="{$part_info['video']}" id="video" controls="controls" controlslist="nodownload" style="height: 600px;width: 600px;">
+			您的浏览器不支持 video 标签。
+		</video>
+    	{else /}
+    	<video src="{$course_list[0]['b_video']}" id="video" controls="controls" controlslist="nodownload" style="height: 600px;width: 600px;">
+			您的浏览器不支持 video 标签。
+		</video>	
+    	{/notempty}
+		
+    </div>
+    <div class="shipin_fr_fl_t">
+      <div class="shipin_fr_fl_tit">
+        <p>相关推荐</p>
+      </div>
+    	<div class="shipin_fr_fl_ner">
+    		<ul>
+                {volist name="tui_list" id="val"}
+                    <li>
+                        <a href="{:url('course/info')}?id={$val.id}" target="_blank"><img src="{$admin_path}{$val.pic}" style="width: 219px;height: 123px;" alt="内蒙古都林教育"/>
+                            <div><font>{$val.title}</font> </div>
+                        </a>
+                    </li>
+                {/volist}
+        	</ul>
+    	</div>
+    </div>
+  </div>
+	<div class="shipin_fr_fr">
+		<h3>{$course_list[0]['k_title']}</h3>
+		<ul>
+			{volist name="course_list" id="val"}
+				<li><span><a href="#" class="edit_path" data-path="{$val.b_video}">{$val['b_title']}</a></span><img src="/static/home/img/course/1.png"/></li>
+			{/volist}
+		</ul>
+	</div>
+</div>
+</body>
+</html>
+<script>
+    $('.edit_path').click(function(){
+        var video_path = $(this).attr('data-path');
+        $("#video").attr('src',video_path);
+    });
+    // 禁止f12
+    $(document).keydown(function(event){
+        if ( event.which == 123 ) {
+            return false;
+        }
+    });
+    // 禁止鼠标右键
+    document.oncontextmenu = function(){
+        event.returnValue = false;
+    }
+</script>

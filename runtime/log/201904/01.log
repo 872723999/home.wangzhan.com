@@ -1,0 +1,196 @@
+---------------------------------------------------------------
+[ 2019-04-01T16:10:41+08:00 ] 127.0.0.1 GET home.wangzhan.com/
+[运行时间：0.722477s] [吞吐率：1.38req/s] [内存消耗：3,018.70kb] [文件加载：89]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => '',
+  'route' => 'home/index/index',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'complete_match' => true,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'purpose' => 'prefetch',
+  'connection' => 'keep-alive',
+  'host' => 'home.wangzhan.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\index\index.html [ array (
+  0 => 'classType_list',
+  1 => 'list',
+  2 => 'course_list',
+  3 => 'package_list',
+  4 => 'article_list',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001869s ] mysql:host=127.0.0.1;port=3306;dbname=wangzhan;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_wz_find_class_type` [ RunTime:0.044706s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `clt_wz_find_class_type` [ RunTime:0.000363s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `clt_wz_find_class_type` [ RunTime:0.000303s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_wz_find_course` [ RunTime:0.030487s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`describe`,`price`,`pic`,`cang`,`class_type_id` FROM `clt_wz_find_course` WHERE  `class_type_id` <> 0  AND `is_tui` = 1 LIMIT 8 [ RunTime:0.012126s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_wz_package` [ RunTime:0.029925s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_wz_package` WHERE  `is_tui` = 1 LIMIT 1 [ RunTime:0.010035s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_wz_article` [ RunTime:0.023854s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_wz_article` WHERE  `is_tui` = 1 [ RunTime:0.000423s ]
+[ error ] [8]未定义变量: admin_path[E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\runtime\temp\f3a7d37b0aa60d977598ee6cb905d0d8.php:218]
+---------------------------------------------------------------
+[ 2019-04-01T16:14:17+08:00 ] 127.0.0.1 GET home.wangzhan.com/
+[运行时间：0.098172s] [吞吐率：10.19req/s] [内存消耗：3,018.69kb] [文件加载：89]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => '',
+  'route' => 'home/index/index',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'complete_match' => true,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'home.wangzhan.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\index\index.html [ array (
+  0 => 'classType_list',
+  1 => 'list',
+  2 => 'course_list',
+  3 => 'package_list',
+  4 => 'article_list',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001680s ] mysql:host=127.0.0.1;port=3306;dbname=wangzhan;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_wz_find_class_type` [ RunTime:0.007506s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `clt_wz_find_class_type` [ RunTime:0.000330s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `clt_wz_find_class_type` [ RunTime:0.000329s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_wz_find_course` [ RunTime:0.006836s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`describe`,`price`,`pic`,`cang`,`class_type_id` FROM `clt_wz_find_course` WHERE  `class_type_id` <> 0  AND `is_tui` = 1 LIMIT 8 [ RunTime:0.000431s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_wz_package` [ RunTime:0.007168s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_wz_package` WHERE  `is_tui` = 1 LIMIT 1 [ RunTime:0.000473s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_wz_article` [ RunTime:0.006613s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_wz_article` WHERE  `is_tui` = 1 [ RunTime:0.000441s ]
+[ error ] [8]未定义变量: admin_path[E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\runtime\temp\f3a7d37b0aa60d977598ee6cb905d0d8.php:218]
+---------------------------------------------------------------
+[ 2019-04-01T16:14:19+08:00 ] 127.0.0.1 GET home.wangzhan.com/
+[运行时间：0.088310s] [吞吐率：11.32req/s] [内存消耗：3,018.69kb] [文件加载：89]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => '',
+  'route' => 'home/index/index',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'complete_match' => true,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'home.wangzhan.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\index\index.html [ array (
+  0 => 'classType_list',
+  1 => 'list',
+  2 => 'course_list',
+  3 => 'package_list',
+  4 => 'article_list',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001562s ] mysql:host=127.0.0.1;port=3306;dbname=wangzhan;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_wz_find_class_type` [ RunTime:0.007419s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `clt_wz_find_class_type` [ RunTime:0.000299s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `clt_wz_find_class_type` [ RunTime:0.000423s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_wz_find_course` [ RunTime:0.007007s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`describe`,`price`,`pic`,`cang`,`class_type_id` FROM `clt_wz_find_course` WHERE  `class_type_id` <> 0  AND `is_tui` = 1 LIMIT 8 [ RunTime:0.000333s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_wz_package` [ RunTime:0.007024s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_wz_package` WHERE  `is_tui` = 1 LIMIT 1 [ RunTime:0.000487s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_wz_article` [ RunTime:0.006667s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_wz_article` WHERE  `is_tui` = 1 [ RunTime:0.000320s ]
+[ error ] [8]未定义变量: admin_path[E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\runtime\temp\f3a7d37b0aa60d977598ee6cb905d0d8.php:218]
+---------------------------------------------------------------
+[ 2019-04-01T16:14:20+08:00 ] 127.0.0.1 GET home.wangzhan.com/
+[运行时间：0.099744s] [吞吐率：10.03req/s] [内存消耗：3,018.69kb] [文件加载：89]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => '',
+  'route' => 'home/index/index',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'complete_match' => true,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'home.wangzhan.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\index\index.html [ array (
+  0 => 'classType_list',
+  1 => 'list',
+  2 => 'course_list',
+  3 => 'package_list',
+  4 => 'article_list',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001807s ] mysql:host=127.0.0.1;port=3306;dbname=wangzhan;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_wz_find_class_type` [ RunTime:0.008551s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `clt_wz_find_class_type` [ RunTime:0.000391s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `clt_wz_find_class_type` [ RunTime:0.000345s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_wz_find_course` [ RunTime:0.010437s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`describe`,`price`,`pic`,`cang`,`class_type_id` FROM `clt_wz_find_course` WHERE  `class_type_id` <> 0  AND `is_tui` = 1 LIMIT 8 [ RunTime:0.000445s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_wz_package` [ RunTime:0.006772s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_wz_package` WHERE  `is_tui` = 1 LIMIT 1 [ RunTime:0.000407s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_wz_article` [ RunTime:0.007816s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_wz_article` WHERE  `is_tui` = 1 [ RunTime:0.000371s ]
+[ error ] [8]未定义变量: admin_path[E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\runtime\temp\f3a7d37b0aa60d977598ee6cb905d0d8.php:218]

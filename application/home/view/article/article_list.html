@@ -1,0 +1,63 @@
+{include file="common/common_head"/}
+<script src="/static/home/js/main01.js"></script>
+<!-- 分页样式 -->
+<link rel="stylesheet" href="/static/common/css/page.css" />
+</head>
+
+<body>
+<!-- 导航 -->
+{include file="common/common_navhead"/}
+
+<div class="newsbaner"></div>
+<div class="newsym">
+  <div class="new_b">
+    <div class="new_nerbt"> <a href="index.html" class="new_bt">首页</a> <span class="new_bt1"> ></span> <a href="news.html" class="new_bt2">新闻资讯</a> </div>
+    <div class="essay-tuijian-news">
+      <div class="top1">
+        <ul class="clear">
+          <li class="active article_type_list"  id="article_type_0"><a href="{:url('article_list')}?article_type=0">全部新闻</a></li>
+          {volist name="article_type" id="val"}
+          	<li class="article_type_list"  id="article_type_{$key}"> <a href="{:url('article_list')}?article_type={$key}">{$val}</a> </li>
+          {/volist}
+        </ul>
+      </div>
+    </div>
+
+    {notempty name="list"}
+    	{volist	name="list" id="val"}
+    		<div class="new_conner">
+    		  	<ul>
+    		  		<li>
+    		  			<div class="new_conner_fl"><img src="{$admin_path}{$val.cover_pic}" style="height: 200px;width: 200px;" alt="内蒙古都林教育"/></div>
+    					<div class="new_conner_fr"><p>{$val.title}</p>
+    						<div class="new_conner_ner">
+    							{$val.introduction}
+    							<a href="{:url('info')}?id={$val.id}" target="_blank">[阅读原文]</a>
+    						</div>
+    						<div class="new_conner_ner_fl">{$val.create_time|date="Y-m-d H:i"}</div>
+    						<div class="new_conner_ner_fr">{$val.show_num}</div>
+    				  </div>
+    			  </li>
+    			</ul>
+    		</div>
+    	{/volist}
+        {else /}
+        <div class="course-filter-page"><span><font color="red">数据为空</font></span></div>
+            
+    {/notempty}
+	  	
+	<div class="course-filter-page">{$list|raw}</div>
+
+  </div>
+	
+</div>
+{include file="common/common_bottom"/}
+</body>
+</html>
+<script>
+    $(function(){
+        var article_type = "<?=$_GET['article_type']?>";
+        $(".article_type_list").removeClass('active');
+        $("#article_type_"+article_type).addClass('active');
+    });
+</script>
