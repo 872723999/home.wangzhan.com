@@ -149,10 +149,10 @@
                                               	<a href="{:url('pay/index')}?course_id={$info.id}&user_id={$uid}" class="course-lesson-btn" target="_blank">立即播放</a>
 												<!-- 价格不为0，当前用户也没解锁，跳转到支付页面 -->
                                               	{/if}
-					            				<div class="course-lesson-duration">
+					            				<!--<div class="course-lesson-duration">
 													<span class="ic_lesson-duration"><img src="/static/home/img/course/ic_time_1.png" alt="" width="13"></span>
 													00:00:54
-												</div>
+												</div>-->
 					            			</li>
 				            			{/volist}
 			            			{/notempty}
@@ -202,20 +202,19 @@
 	<div class="course-side-box">
 	
 		<ul>
-			
 			<li>
-				<a href="{:url('teacher/info')}?id={$val.id}" target="_blank">
+				<a href="{:url('teacher/info')}?id={$teacher_info.id}" target="_blank">
 					<div class="teacher-img clearfix course-side-imgwrap">
 						<span class="icon-line"></span>
 						<div class="course-side-teacher-img ">
-							<img src="{$admin_path}{$val.pic}" />
+							<img src="{$admin_path}{$teacher_info.head_img}" />
 						</div>
 						<div class="teacher-des-wrap">
 							<h3 class="course-side-teacher">{$teacher_info['name']}</h3>
 						</div>
 					</div>
 					<div class="zhh-editor course-side-teacher-desc teacher-des" style="font-size: 16px; line-height: 30px; color: #333;"><?=$val['introduction']?></div>
-					<a href="{:url('teacher/info')}?id={$val.id}" target="_blank" class="free_listen_btn">我要在听老师课程</a>
+					<a href="{:url('teacher/info')}?id={$teacher_info.id}" target="_blank" class="free_listen_btn">我要在听老师课程</a>
 				</a>
 			</li>
 			
