@@ -20,7 +20,7 @@ class WzCourse extends Model
      * @return   [type]                   [description]
      */
     public function get_info( $id ){
-    	$info = $this->where('id',$id)->find()->toArray();
+    	$info = $this->where('id',$id)->find();
     	$info['pic'] = config('admin_path') . $info['pic'];
     	return $info;
     }
