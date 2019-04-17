@@ -14,9 +14,9 @@
 <div class="shipin_fr">
   <div class="shipin_fr_fl">
   	{notempty name="$part_info"}
-    	<h3>{$part_info['title']}</h3>
+    	<h3 id="video_title">{$part_info['title']}</h3>
     {else /}
-    	<h3>{$course_list[0]['b_title']}</h3>
+    	<h3 id="video_title">{$course_list[0]['b_title']}</h3>
     {/notempty}
     <!-- <div class="shipin_fr_shipin"> -->
     <div class="">
@@ -52,7 +52,7 @@
 		<h3>{$course_list[0]['k_title']}</h3>
 		<ul>
 			{volist name="course_list" id="val"}
-				<li><span><a href="#" class="edit_path" data-path="{$val.b_video}">{$val['b_title']}</a></span><img src="/static/home/img/course/1.png"/></li>
+				<a href="javascript:;" class="edit_path" data-path="{$val.b_video}"><li><span>{$val['b_title']}</span><img src="/static/home/img/course/1.png"/></li></a>
 			{/volist}
 		</ul>
 	</div>
@@ -61,11 +61,13 @@
 </html>
 <script>
     $('.edit_path').click(function(){
+      	var title = $(this).text();
+      	$("#video_title").text(title);
         var video_path = $(this).attr('data-path');
         $("#video").attr('src',video_path);
     });
     // 禁止f12
-    $(document).keydown(function(event){
+    /**/$(document).keydown(function(event){
         if ( event.which == 123 ) {
             return false;
         }

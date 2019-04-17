@@ -115,7 +115,7 @@ $(function(){
     {empty name="uid"}
         <div class="dao_lf"><a href="/home/user/login" target="_blank">登录</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/home/user/login" target="_blank">注册</a></div>
     {else /}
-        <div style="padding-top: 30px;"><a href="{:url('my/index')}">都林学员_{$uid}</a>&nbsp;&nbsp;<a href="{:url('user/login_out')}">注销</a></div>
+        <div style="padding-top: 30px;   "><a  style="color:#fff;  font-size:16px; " href="{:url('my/index')}">都林学员_{$uid}</a>&nbsp;&nbsp;<a   style="color:#fff;  font-size:16px;"  href="{:url('user/login_out')}">注销</a></div>
     {/empty}
 </div>
 	
@@ -259,11 +259,11 @@ $(function(){
   <h3>课程包</h3>
   {notempty name="package_list"}
       {volist name="package_list" id="val"}
-          <p><a href="{:url('course/bao_info')}?id={$val.id}" target="_blank">{$val.title}</a></p>
+          <p><a style="color:#fff" href="{:url('course/bao_info')}?id={$val.id}" target="_blank">{$val.title}</a></p>
           <div  class="kcb_bgner">
-              <div class="kcb_bgner_fl"><img src="{$admin_path}{$val.pic}" style="height: 200px;width: 200px;" alt="都林教育"/></div>
+              <div class="kcb_bgner_fl" style="margin-left:20px; "><img src="{$admin_path}{$val.pic}" style="height: 200px;width: 200px;" alt="都林教育"/></div>
               <div class="kcb_bgner_fr">
-                  <p>{$classType_list[$val.class_type_id]['title']}有效天数：{$val.day}天        打包价格：<span>￥{$val.price}</span> ￥2?2?6?5?.?0?0?</p>
+                  <p>{$classType_list[$val.class_type_id]['title']}有效天数：{$val.day}天        打包价格：<span>￥{$val.price}</span><s>{$val.old_price}</s></p>
                   <h3>{$val.describe}</h3>
                   <div class="kcb_bgan_fl"> <a href="{:url('pay/index')}?package_id={$val.id}">我要购买</a></div>
                   <div class="kcb_bgan_fr"> <a href="{:url('course/bao_info')}?id={$val.id}">课程详情</a></div>
