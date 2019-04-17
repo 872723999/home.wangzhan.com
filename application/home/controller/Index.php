@@ -35,10 +35,16 @@ class Index extends Common{
         ]);
     }
     public function index(){
+        $data = input();
         // 学科列表
-    	$list = $this->class_type_model->get_list();
+        
+        $list_all = $this->course_model->where('class_type_id','<>','')->where('is_tui',1)->limit(8)->select()->toArray();
+        $list1 = $this->course_model->where('class_type_id',1)->where('is_tui',1)->limit(8)->select()->toArray();
+        $list2 = $this->course_model->where('class_type_id',3)->where('is_tui',1)->limit(8)->select()->toArray();
+        $list3 = $this->course_model->where('class_type_id',10)->where('is_tui',1)->limit(8)->select()->toArray();
+        
         // 课程列表
-        $course_list = $this->course_model->get_list('id,title,small_title,describe,price,pic,cang,class_type_id');
+        // $course_list = $this->course_model->get_list('id,title,small_title,describe,price,pic,cang,class_type_id',$data['class_type_id']);
         // 课程包列表
         $package_list = $this->package_model->where('is_tui',1)->limit(1)->select()->toArray();
         // 文章表
@@ -46,23 +52,28 @@ class Index extends Common{
         // 小类型1
         $small_type_list1 = $this->class_small_type_model->where('class_type_id','like',"%1%")->select();
         // 小类型2
-        $small_type_list2 = $this->class_small_type_model->where('class_type_id','like',"%2%")->select();
+        $small_type_list2 = $this->class_small_type_model->where('class_type_id','like',"%10%")->select();
         // 小类型3
         $small_type_list3 = $this->class_small_type_model->where('class_type_id','like',"%3%")->select();
 
-        foreach ($course_list as $key => &$val) {
-            $val['buy_num'] = $this->order_model->get_num(['course_id'=>$val['id']]);
-        }
+        // foreach ($list_all as $key => &$val) {
+        //     $val['buy_num'] = $this->order_model->get_num(['course_id'=>$val['id']]);
+        // }
 
         $this->assign([
             'list'  => $list,
-            'course_list'   => $course_list,
+            'list_all'   => $list_all,
             'package_list'  => $package_list,
             'article_list'  => $article_list,
             'admin_path'    => config('admin_path'),
             'small_type_list1'  => $small_type_list1,
             'small_type_list2'  => $small_type_list2,
-            'small_type_list3'  => $small_type_list3
+            'small_type_list3'  => $small_type_list3,
+            'list_all'  => $list_all,
+            'list1'  => $list1,
+            'list2'  => $list2,
+            'list3'  => $list3,
+
         ]);
         return $this->fetch();
     }

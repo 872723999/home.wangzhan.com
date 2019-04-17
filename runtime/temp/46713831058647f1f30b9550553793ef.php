@@ -1,4 +1,4 @@
-<?php /*a:4:{s:84:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\course\info.html";i:1555469748;s:91:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\common\common_head.html";i:1554718840;s:94:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\common\common_navhead.html";i:1555464145;s:93:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\common\common_bottom.html";i:1554719966;}*/ ?>
+<?php /*a:4:{s:84:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\course\info.html";i:1555469756;s:91:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\common\common_head.html";i:1554718840;s:94:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\common\common_navhead.html";i:1555464145;s:93:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\common\common_bottom.html";i:1554719966;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>

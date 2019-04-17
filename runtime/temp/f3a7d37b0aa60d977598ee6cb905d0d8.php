@@ -1,4 +1,4 @@
-<?php /*a:3:{s:84:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\index\index.html";i:1555469584;s:91:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\common\common_head.html";i:1554718840;s:93:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\common\common_bottom.html";i:1554719966;}*/ ?>
+<?php /*a:3:{s:84:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\index\index.html";i:1555480029;s:91:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\common\common_head.html";i:1554718840;s:93:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\common\common_bottom.html";i:1554719966;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -159,16 +159,16 @@ $(function(){
 	<!--课程修改-->	<!--课程修改-->	<!--课程修改-->	<!--课程修改-->	<!--课程修改-->	<!--课程修改-->	<!--课程修改-->	<!--课程修改-->	<!--课程修改-->	<!--课程修改-->	<!--课程修改-->	<!--课程修改-->	<!--课程修改-->
   <div class="wrapper">
     <button class="active">全部课程</button>
-    <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+    <?php if(is_array($classType_list) || $classType_list instanceof \think\Collection || $classType_list instanceof \think\Paginator): $i = 0; $__LIST__ = $classType_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
         <button data-id="<?php echo htmlentities($val['id']); ?>"><?php echo htmlentities($val['title']); ?></button>
     <?php endforeach; endif; else: echo "" ;endif; ?>
     <div class="content" style="display: block;">
       <div class="kcsz_ner">
         <ul>
-            <?php if(is_array($course_list) || $course_list instanceof \think\Collection || $course_list instanceof \think\Paginator): $i = 0; $__LIST__ = $course_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+            <?php if(is_array($list_all) || $list_all instanceof \think\Collection || $list_all instanceof \think\Paginator): $i = 0; $__LIST__ = $list_all;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
             <a href="<?php echo url('course/info'); ?>?id=<?php echo htmlentities($val['id']); ?>" target="_blank">
                 <li>
-                    <img src="<?php echo htmlentities($val['pic']); ?>" alt="内蒙古都林教育"/>
+                    <img src="<?php echo htmlentities($admin_path); ?><?php echo htmlentities($val['pic']); ?>" alt="内蒙古都林教育"/>
                     <h3><?php echo htmlentities($val['title']); ?></h3>
                     <p><?php echo htmlentities($val['small_title']); ?></p>
                     <div>
@@ -184,10 +184,10 @@ $(function(){
     <div class="content">
         <div class="kcsz_ner">
             <ul>
-                <?php if(is_array($course_list) || $course_list instanceof \think\Collection || $course_list instanceof \think\Paginator): $i = 0; $__LIST__ = $course_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;if($val['class_type_id'] == '1'): ?>
+                <?php if(is_array($list1) || $list1 instanceof \think\Collection || $list1 instanceof \think\Paginator): $i = 0; $__LIST__ = $list1;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
                         <a href="<?php echo url('course/info'); ?>?id=<?php echo htmlentities($val['id']); ?>" target="_blank">
                             <li>
-                                <img src="<?php echo htmlentities($val['pic']); ?>" alt="内蒙古都林教育"/>
+                                <img src="<?php echo htmlentities($admin_path); ?><?php echo htmlentities($val['pic']); ?>" alt="内蒙古都林教育"/>
                                 <h3><?php echo htmlentities($val['title']); ?></h3>
                                 <p><?php echo htmlentities($val['small_title']); ?></p>
                                 <div>
@@ -196,16 +196,16 @@ $(function(){
                                 </div>
                             </li>
                         </a>
-                    <?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                <?php endforeach; endif; else: echo "" ;endif; ?>
             </ul>
         </div>
     </div>
     <div class="content">
       <div class="kcsz_ner">
         <ul>
-            <?php if(is_array($course_list) || $course_list instanceof \think\Collection || $course_list instanceof \think\Paginator): $i = 0; $__LIST__ = $course_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;if($val['class_type_id'] == '2'): ?>
+            <?php if(is_array($list2) || $list2 instanceof \think\Collection || $list2 instanceof \think\Paginator): $i = 0; $__LIST__ = $list2;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
                     <a href="<?php echo url('course/info'); ?>?id=<?php echo htmlentities($val['id']); ?>" target="_blank">
-                        <li><img src="<?php echo htmlentities($val['pic']); ?>" alt="内蒙古都林教育"/>
+                        <li><img src="<?php echo htmlentities($admin_path); ?><?php echo htmlentities($val['pic']); ?>" alt="内蒙古都林教育"/>
                         <h3><?php echo htmlentities($val['title']); ?></h3>
                         <p><?php echo htmlentities($val['small_title']); ?></p>
                         <div>
@@ -214,17 +214,17 @@ $(function(){
                         </div>
                         </li>
                     </a>
-                <?php endif; endforeach; endif; else: echo "" ;endif; ?>
+            <?php endforeach; endif; else: echo "" ;endif; ?>
         </ul>
       </div>
     </div>
     <div class="content">
       <div class="kcsz_ner">
         <ul>
-            <?php if(is_array($course_list) || $course_list instanceof \think\Collection || $course_list instanceof \think\Paginator): $i = 0; $__LIST__ = $course_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;if($val['class_type_id'] == '3'): ?>
+            <?php if(is_array($list3) || $list3 instanceof \think\Collection || $list3 instanceof \think\Paginator): $i = 0; $__LIST__ = $list3;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
                     <a href="<?php echo url('course/info'); ?>?id=<?php echo htmlentities($val['id']); ?>" target="_blank">
                         <li>
-                            <img src="<?php echo htmlentities($val['pic']); ?>" alt="内蒙古都林教育"/>
+                            <img src="<?php echo htmlentities($admin_path); ?><?php echo htmlentities($val['pic']); ?>" alt="内蒙古都林教育"/>
                             <h3><?php echo htmlentities($val['title']); ?></h3>
                             <p><?php echo htmlentities($val['small_title']); ?></p>
                             <div>
@@ -233,7 +233,7 @@ $(function(){
                             </div>
                         </li>
                     </a>
-                <?php endif; endforeach; endif; else: echo "" ;endif; ?>
+            <?php endforeach; endif; else: echo "" ;endif; ?>
         </ul>
       </div>
     </div>

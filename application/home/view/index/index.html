@@ -144,16 +144,16 @@ $(function(){
 	<!--课程修改-->	<!--课程修改-->	<!--课程修改-->	<!--课程修改-->	<!--课程修改-->	<!--课程修改-->	<!--课程修改-->	<!--课程修改-->	<!--课程修改-->	<!--课程修改-->	<!--课程修改-->	<!--课程修改-->	<!--课程修改-->
   <div class="wrapper">
     <button class="active">全部课程</button>
-    {volist name="list" id="val"}
+    {volist name="classType_list" id="val"}
         <button data-id="{$val.id}">{$val.title}</button>
     {/volist}
     <div class="content" style="display: block;">
       <div class="kcsz_ner">
         <ul>
-            {volist name="course_list" id="val"}
+            {volist name="list_all" id="val"}
             <a href="{:url('course/info')}?id={$val.id}" target="_blank">
                 <li>
-                    <img src="{$val.pic}" alt="内蒙古都林教育"/>
+                    <img src="{$admin_path}{$val.pic}" alt="内蒙古都林教育"/>
                     <h3>{$val.title}</h3>
                     <p>{$val.small_title}</p>
                     <div>
@@ -169,11 +169,10 @@ $(function(){
     <div class="content">
         <div class="kcsz_ner">
             <ul>
-                {volist name="course_list" id="val"}
-                    {eq name="val.class_type_id" value="1"}
+                {volist name="list1" id="val"}
                         <a href="{:url('course/info')}?id={$val.id}" target="_blank">
                             <li>
-                                <img src="{$val.pic}" alt="内蒙古都林教育"/>
+                                <img src="{$admin_path}{$val.pic}" alt="内蒙古都林教育"/>
                                 <h3>{$val.title}</h3>
                                 <p>{$val.small_title}</p>
                                 <div>
@@ -182,7 +181,6 @@ $(function(){
                                 </div>
                             </li>
                         </a>
-                    {/eq}
                 {/volist}
             </ul>
         </div>
@@ -190,10 +188,9 @@ $(function(){
     <div class="content">
       <div class="kcsz_ner">
         <ul>
-            {volist name="course_list" id="val"}
-                {eq name="val.class_type_id" value="2"}
+            {volist name="list2" id="val"}
                     <a href="{:url('course/info')}?id={$val.id}" target="_blank">
-                        <li><img src="{$val.pic}" alt="内蒙古都林教育"/>
+                        <li><img src="{$admin_path}{$val.pic}" alt="内蒙古都林教育"/>
                         <h3>{$val.title}</h3>
                         <p>{$val.small_title}</p>
                         <div>
@@ -202,7 +199,6 @@ $(function(){
                         </div>
                         </li>
                     </a>
-                {/eq}
             {/volist}
         </ul>
       </div>
@@ -210,11 +206,10 @@ $(function(){
     <div class="content">
       <div class="kcsz_ner">
         <ul>
-            {volist name="course_list" id="val"}
-                {eq name="val.class_type_id" value="3"}
+            {volist name="list3" id="val"}
                     <a href="{:url('course/info')}?id={$val.id}" target="_blank">
                         <li>
-                            <img src="{$val.pic}" alt="内蒙古都林教育"/>
+                            <img src="{$admin_path}{$val.pic}" alt="内蒙古都林教育"/>
                             <h3>{$val.title}</h3>
                             <p>{$val.small_title}</p>
                             <div>
@@ -223,7 +218,6 @@ $(function(){
                             </div>
                         </li>
                     </a>
-                {/eq}
             {/volist}
         </ul>
       </div>
