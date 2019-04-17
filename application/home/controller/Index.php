@@ -77,4 +77,8 @@ class Index extends Common{
         ]);
         return $this->fetch();
     }
+
+    public function gsjj(){
+        return $this->fetch();
+    }
 }
