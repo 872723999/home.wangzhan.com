@@ -1,4 +1,4 @@
-<?php /*a:1:{s:82:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\pay\index.html";i:1555296552;}*/ ?>
+<?php /*a:1:{s:82:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\pay\index.html";i:1555464145;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -84,7 +84,7 @@ $(document).click(function(e){
           <div>
             <div class="top_contact_us">
               <div class="top_telphone"></div>
-              <div class="top_weixin"><a href="#" id="contact_weixin" onclick="openWindow(this)"> <img src="/static/home/img/weixin_pay.png" alt=""> </a></div>
+              <div class="top_weixin"><a id="contact_weixin" onclick="openWindow(this)"> <img src="/static/home/img/weixin_pay.png" alt=""> </a></div>
             </div>
             <div id="light_qq" class="white_content"></div>
             <div id="light_weixin" class="white_content">

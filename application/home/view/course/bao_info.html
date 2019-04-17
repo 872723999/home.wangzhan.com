@@ -24,7 +24,7 @@
             </li>
             <li>
               <p>学员</p>
-              <p> 80</p>
+              <p>{$info.buy_num}</p>
             </li>
           </ul>
         </div>
@@ -34,7 +34,10 @@
         <p>{$info.describe}</p>
         <p>法考专项班有效天数：{$info.day}天</p>
         <h2>打包价格：￥{$info.price}<s>￥{$info.old_price}</s></h2>
-        <a href="{:url('pay/index')}?package_id={$info.id}"><div class="kcbxqy_confr_zixun">立即购买</div></a>
+        <!-- 已解锁 -->
+        {eq name="is_lock" value="0"}
+          <a href="{:url('pay/index')}?package_id={$info.id}"><div class="kcbxqy_confr_zixun">立即购买</div></a>
+        {/eq}
       </div>
     </div>
     <div class="kcbxqy_neer">
@@ -67,7 +70,7 @@
                                     <div class="kcbxqy_neer_ner1_n">
                                         <h3>{$val.title}</h3>
                                         <p>{$val.small_title}</p>
-                                        <div class="kcxqnr_ner_fr">{$val.cang}</div>
+                                        <div class="kcxqnr_ner_fr">{$val.buy_num}</div>
                                         <div class="kcxqnr_ner_right">￥{$val.price}元</div>
                                     </div>
                                 </a>

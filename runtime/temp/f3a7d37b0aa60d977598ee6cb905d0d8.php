@@ -1,4 +1,4 @@
-<?php /*a:3:{s:84:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\index\index.html";i:1555339252;s:91:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\common\common_head.html";i:1554718840;s:93:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\common\common_bottom.html";i:1554719966;}*/ ?>
+<?php /*a:3:{s:84:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\index\index.html";i:1555469584;s:91:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\common\common_head.html";i:1554718840;s:93:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\common\common_bottom.html";i:1554719966;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -130,7 +130,7 @@ $(function(){
     <?php if(empty($uid) || (($uid instanceof \think\Collection || $uid instanceof \think\Paginator ) && $uid->isEmpty())): ?>
         <div class="dao_lf"><a href="/home/user/login" target="_blank">登录</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/home/user/login" target="_blank">注册</a></div>
     <?php else: ?>
-        <div style="padding-top: 30px;"><a href="<?php echo url('my/index'); ?>">都林学员_<?php echo htmlentities($uid); ?></a>&nbsp;&nbsp;<a href="<?php echo url('user/login_out'); ?>">注销</a></div>
+        <div style="padding-top: 30px;   "><a  style="color:#fff;  font-size:16px; " href="<?php echo url('my/index'); ?>">都林学员_<?php echo htmlentities($uid); ?></a>&nbsp;&nbsp;<a   style="color:#fff;  font-size:16px;"  href="<?php echo url('user/login_out'); ?>">注销</a></div>
     <?php endif; ?>
 </div>
 	
@@ -170,8 +170,9 @@ $(function(){
                 <li>
                     <img src="<?php echo htmlentities($val['pic']); ?>" alt="内蒙古都林教育"/>
                     <h3><?php echo htmlentities($val['title']); ?></h3>
+                    <p><?php echo htmlentities($val['small_title']); ?></p>
                     <div>
-                      <div class="kcsz_ner_fr"><?php echo htmlentities($val['cang']); ?></div>
+                      <div class="kcsz_ner_fr"><?php echo htmlentities($val['buy_num']); ?></div>
                       <div class="kcsz_ner_righ">￥<?php echo htmlentities($val['price']); ?>元</div>
                     </div>
                 </li>
@@ -188,9 +189,9 @@ $(function(){
                             <li>
                                 <img src="<?php echo htmlentities($val['pic']); ?>" alt="内蒙古都林教育"/>
                                 <h3><?php echo htmlentities($val['title']); ?></h3>
-                                <p><?php echo htmlentities($val['describe']); ?></p>
+                                <p><?php echo htmlentities($val['small_title']); ?></p>
                                 <div>
-                                  <div class="kcsz_ner_fr"><?php echo htmlentities($val['cang']); ?></div>
+                                  <div class="kcsz_ner_fr"><?php echo htmlentities($val['buy_num']); ?></div>
                                   <div class="kcsz_ner_righ">￥<?php echo htmlentities($val['price']); ?>元</div>
                                 </div>
                             </li>
@@ -206,9 +207,9 @@ $(function(){
                     <a href="<?php echo url('course/info'); ?>?id=<?php echo htmlentities($val['id']); ?>" target="_blank">
                         <li><img src="<?php echo htmlentities($val['pic']); ?>" alt="内蒙古都林教育"/>
                         <h3><?php echo htmlentities($val['title']); ?></h3>
-                        <p><?php echo htmlentities($val['describe']); ?></p>
+                        <p><?php echo htmlentities($val['small_title']); ?></p>
                         <div>
-                          <div class="kcsz_ner_fr"><?php echo htmlentities($val['cang']); ?></div>
+                          <div class="kcsz_ner_fr"><?php echo htmlentities($val['buy_num']); ?></div>
                           <div class="kcsz_ner_righ">￥<?php echo htmlentities($val['price']); ?>元</div>
                         </div>
                         </li>
@@ -225,9 +226,9 @@ $(function(){
                         <li>
                             <img src="<?php echo htmlentities($val['pic']); ?>" alt="内蒙古都林教育"/>
                             <h3><?php echo htmlentities($val['title']); ?></h3>
-                            <p><?php echo htmlentities($val['describe']); ?></p>
+                            <p><?php echo htmlentities($val['small_title']); ?></p>
                             <div>
-                              <div class="kcsz_ner_fr"><?php echo htmlentities($val['cang']); ?></div>
+                              <div class="kcsz_ner_fr"><?php echo htmlentities($val['buy_num']); ?></div>
                               <div class="kcsz_ner_righ">￥<?php echo htmlentities($val['price']); ?>元</div>
                             </div>
                         </li>
@@ -267,11 +268,11 @@ $(function(){
 <div class="kcb_bg" >
   <h3>课程包</h3>
   <?php if(!(empty($package_list) || (($package_list instanceof \think\Collection || $package_list instanceof \think\Paginator ) && $package_list->isEmpty()))): if(is_array($package_list) || $package_list instanceof \think\Collection || $package_list instanceof \think\Paginator): $i = 0; $__LIST__ = $package_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
-          <p><a href="<?php echo url('course/bao_info'); ?>?id=<?php echo htmlentities($val['id']); ?>" target="_blank"><?php echo htmlentities($val['title']); ?></a></p>
+          <p><a style="color:#fff" href="<?php echo url('course/bao_info'); ?>?id=<?php echo htmlentities($val['id']); ?>" target="_blank"><?php echo htmlentities($val['title']); ?></a></p>
           <div  class="kcb_bgner">
-              <div class="kcb_bgner_fl"><img src="<?php echo htmlentities($admin_path); ?><?php echo htmlentities($val['pic']); ?>" style="height: 200px;width: 200px;" alt="都林教育"/></div>
+              <div class="kcb_bgner_fl" style="margin-left:20px; "><img src="<?php echo htmlentities($admin_path); ?><?php echo htmlentities($val['pic']); ?>" style="height: 200px;width: 200px;" alt="都林教育"/></div>
               <div class="kcb_bgner_fr">
-                  <p><?php echo htmlentities($classType_list[$val['class_type_id']]['title']); ?>有效天数：<?php echo htmlentities($val['day']); ?>天        打包价格：<span>￥<?php echo htmlentities($val['price']); ?></span> ￥2?2?6?5?.?0?0?</p>
+                  <p><?php echo htmlentities($classType_list[$val['class_type_id']]['title']); ?>有效天数：<?php echo htmlentities($val['day']); ?>天        打包价格：<span>￥<?php echo htmlentities($val['price']); ?></span><s><?php echo htmlentities($val['old_price']); ?></s></p>
                   <h3><?php echo htmlentities($val['describe']); ?></h3>
                   <div class="kcb_bgan_fl"> <a href="<?php echo url('pay/index'); ?>?package_id=<?php echo htmlentities($val['id']); ?>">我要购买</a></div>
                   <div class="kcb_bgan_fr"> <a href="<?php echo url('course/bao_info'); ?>?id=<?php echo htmlentities($val['id']); ?>">课程详情</a></div>

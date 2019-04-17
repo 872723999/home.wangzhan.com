@@ -1,4 +1,4 @@
-<?php /*a:4:{s:88:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\course\bao_list.html";i:1555170287;s:91:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\common\common_head.html";i:1554718839;s:94:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\common\common_navhead.html";i:1554714878;s:93:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\common\common_bottom.html";i:1554719965;}*/ ?>
+<?php /*a:4:{s:88:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\course\bao_list.html";i:1555469942;s:91:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\common\common_head.html";i:1554718840;s:94:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\common\common_navhead.html";i:1555464145;s:93:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\common\common_bottom.html";i:1554719966;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,8 +45,8 @@
     	<?php if(empty($uid) || (($uid instanceof \think\Collection || $uid instanceof \think\Paginator ) && $uid->isEmpty())): ?>
 			<div class="dlss">
 		  		<ul>
-		  			<li><a href="denglu.html" target="_blank">登录</a></li>
-					<li><a href="denglu.html" target="_blank">注册</a></li>
+		  			<li><a href="<?php echo url('user/login'); ?>" target="_blank">登录</a></li>
+					<li><a href="<?php echo url('user/login'); ?>" target="_blank">注册</a></li>
 				</ul>
 			</div>
     	<?php endif; ?>
@@ -69,11 +69,6 @@
             <?php endforeach; endif; else: echo "" ;endif; ?>
           </ul>
         </div>
-        <!-- <div class="kcb_dhflxi">
-          <p  style="background: #ff6600;  border: none;"><a style="color:#fff;" href="#">最新</a></p>
-          <p><a href="#">最新</a></p>
-          <p><a href="#">最新</a></p>
-        </div> -->
       </div>
       <div class="kcb_dhfr">
         <div class="searchdiv flright">
@@ -91,7 +86,7 @@
                         <h3><?php echo htmlentities($val['title']); ?></h3>
                         <p><?php echo htmlentities($val['describe']); ?></p>
                         <div>
-                            <div class="kcsz_ner_fr"><?php echo htmlentities($val['cang']); ?></div>
+                            <div class="kcsz_ner_fr"><?php echo htmlentities($val['buy_num']); ?></div>
                             <div class="kcsz_ner_righ">￥<?php echo htmlentities($val['price']); ?>元</div>
                         </div>
                     </li>

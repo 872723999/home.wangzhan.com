@@ -1,4 +1,4 @@
-<?php /*a:4:{s:84:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\course\info.html";i:1555382327;s:91:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\common\common_head.html";i:1554718840;s:94:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\common\common_navhead.html";i:1554714880;s:93:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\common\common_bottom.html";i:1554719966;}*/ ?>
+<?php /*a:4:{s:84:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\course\info.html";i:1555469748;s:91:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\common\common_head.html";i:1554718840;s:94:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\common\common_navhead.html";i:1555464145;s:93:"E:\phpStudy\PHPTutorial\WWW\home.wangzhan.com\application\home\view\common\common_bottom.html";i:1554719966;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,8 +41,8 @@
     	<?php if(empty($uid) || (($uid instanceof \think\Collection || $uid instanceof \think\Paginator ) && $uid->isEmpty())): ?>
 			<div class="dlss">
 		  		<ul>
-		  			<li><a href="denglu.html" target="_blank">登录</a></li>
-					<li><a href="denglu.html" target="_blank">注册</a></li>
+		  			<li><a href="<?php echo url('user/login'); ?>" target="_blank">登录</a></li>
+					<li><a href="<?php echo url('user/login'); ?>" target="_blank">注册</a></li>
 				</ul>
 			</div>
     	<?php endif; ?>
@@ -97,7 +97,7 @@
             
 			<p class="keshi">课时:<span class="course-c-label">&nbsp;<?php echo htmlentities($count); ?>节</span></p>
             
-			<p class="bofang">参与人数:<span class="course-c-label">&nbsp;19730人</span></p>
+			<p class="bofang">参与人数:<span class="course-c-label">&nbsp;<?php echo htmlentities($info['buy_num']); ?>人</span></p>
 			<div class="buy-btn">
 				<ul>
 					<!-- 如果价钱为0，直接跳转到视频页面 -->
@@ -186,10 +186,10 @@
                                               	<a href="<?php echo url('pay/index'); ?>?course_id=<?php echo htmlentities($info['id']); ?>&user_id=<?php echo htmlentities($uid); ?>" class="course-lesson-btn" target="_blank">立即播放</a>
 												<!-- 价格不为0，当前用户也没解锁，跳转到支付页面 -->
                                               	<?php endif; ?>
-					            				<div class="course-lesson-duration">
+					            				<!--<div class="course-lesson-duration">
 													<span class="ic_lesson-duration"><img src="/static/home/img/course/ic_time_1.png" alt="" width="13"></span>
 													00:00:54
-												</div>
+												</div>-->
 					            			</li>
 				            			<?php endforeach; endif; else: echo "" ;endif; endif; ?>
 			            		</ul>
@@ -235,20 +235,19 @@
 	<div class="course-side-box">
 	
 		<ul>
-			
 			<li>
-				<a href="<?php echo url('teacher/info'); ?>?id=<?php echo htmlentities($val['id']); ?>" target="_blank">
+				<a href="<?php echo url('teacher/info'); ?>?id=<?php echo htmlentities($teacher_info['id']); ?>" target="_blank">
 					<div class="teacher-img clearfix course-side-imgwrap">
 						<span class="icon-line"></span>
 						<div class="course-side-teacher-img ">
-							<img src="<?php echo htmlentities($admin_path); ?><?php echo htmlentities($val['pic']); ?>" />
+							<img src="<?php echo htmlentities($admin_path); ?><?php echo htmlentities($teacher_info['head_img']); ?>" />
 						</div>
 						<div class="teacher-des-wrap">
 							<h3 class="course-side-teacher"><?php echo htmlentities($teacher_info['name']); ?></h3>
 						</div>
 					</div>
 					<div class="zhh-editor course-side-teacher-desc teacher-des" style="font-size: 16px; line-height: 30px; color: #333;"><?=$val['introduction']?></div>
-					<a href="<?php echo url('teacher/info'); ?>?id=<?php echo htmlentities($val['id']); ?>" target="_blank" class="free_listen_btn">我要在听老师课程</a>
+					<a href="<?php echo url('teacher/info'); ?>?id=<?php echo htmlentities($teacher_info['id']); ?>" target="_blank" class="free_listen_btn">我要在听老师课程</a>
 				</a>
 			</li>
 			

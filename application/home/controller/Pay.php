@@ -57,7 +57,7 @@ class Pay extends Common{
             }
 
           	// 删除未完成的相同订单号的订单
-          	$this->order_model->where('order_num',$order_num)->delete();
+          	$this->order_model->where('order_num',$order_num)->where('status',2)->delete();
 
             $this->create_order([
                 'id' => $info['id'],

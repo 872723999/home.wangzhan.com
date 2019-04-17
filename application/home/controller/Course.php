@@ -112,6 +112,9 @@ class Course extends Common{
             $is_lock = 0;
         }
       
+        // 统计购买人数
+        $info['buy_num'] = $this->order_model->get_num(['course_id'=>$info['id']]);
+
         $this->assign([
             'info'  => $info,
             'teacher_info'  => $teacher_info,
@@ -144,6 +147,8 @@ class Course extends Common{
             ->where('k.id',$data['course_id'])
             ->select();
 
+            // 推荐课程
+            $tui_list = $this->course_model->where('id','<>',$data['course_id'])->limit(2)->select();
         }else{
             // 根据部分去查找课程，然后去查这个课程下面所有的部分
                 // 部分
@@ -233,6 +238,10 @@ class Course extends Common{
             $bao_list = $this->package_model->where( $map )->paginate(config('pageSize'),false,['query' => request()->param()]);
         }
 
+        foreach ($bao_list as $key => &$val) {
+            $val['buy_num'] = $this->order_model->get_num(['package_id'=>$val['id']]);
+        }
+
         $this->assign([
             'bao_list'  =>  $bao_list
         ]);
@@ -244,17 +253,34 @@ class Course extends Common{
     public function bao_info( $id ){
         $package_info = $this->package_model->where('id',$id)->find();
 
+        // 解锁
+        $order_info = $this->order_model->where('package_id',$id)->where('status',1)->where('user_id',$this->uid)->find();
+        if(!empty($order_info)){
+            $is_lock = 1;
+        }else{
+            $is_lock = 0;
+        }
+
         $course_num = count(explode(',',$package_info['course_ids']));
         // 包下面的课程
         $course_list = $this->course_model->whereIn('id',$package_info['course_ids'])->select()->toArray();
+        foreach ($course_list as $key => &$val) {
+            $val['buy_num'] = $this->order_model->get_num(['course_id'=>$val['id']]);
+        }
+
+
         // 推荐老师
         $tui_teacher_list = $this->teacher_model->limit(2)->select()->toArray();
+
+        // 购买数量
+        $package_info['buy_num'] = $this->order_model->get_num(['package_id'=>$package_info['id']]);
 
         $this->assign([
             'info'  => $package_info,
             'course_list'   => $course_list,
             'course_num'    => $course_num,
-            'tui_teacher_list'  => $tui_teacher_list
+            'tui_teacher_list'  => $tui_teacher_list,
+            'is_lock'   => $is_lock
         ]);
         return $this->fetch();
     }
